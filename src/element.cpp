@@ -4,85 +4,65 @@
 bool Element::empty()
 {
     // Ein Knoten ist leer, wenn eines oder beide Kinder nullptr sind.
-    return left == nullptr || right == nullptr;
+    // TODO
 }
 
 void Element::insert(int key, bool value)
 {
     // this->key und this-> value können bedingungslos gesetzt werden,
-    this->key = key;
-    this->value = value;
+    // TODO
 
     // Falls eines der Kinder bisher nullptr war, wird es jetzt initialisiert.
     // Dadurch wird garantiert, dass ein Knoten nicht leer ist,
     // nachdem er mit einem Schlüssel und Wert initialisiert wurde.
-    if (left == nullptr) {
-        left = new Element();
-    }
-    if (right == nullptr) {
-        right = new Element();
-    }
+    // TODO
 }
 
 void Element::add(int key, bool value)
 {
     // Wenn der Knoten leer ist, wird er mit dem Schlüssel und Wert initialisiert.
-    if (empty()) {
-        insert(key, value);
-        return;
-    }
+    // TODO
 
     // Wenn der Schlüssel in this gefunden wurde, wird der Wert überschrieben.
-    if (key == this->key) {
-        this->value = value;
-        return;
-    }
+    // TODO
 
     // Wenn der einzufügende Schlüssel kleiner als this->key ist, gehe nach links.
-    if (key < this->key) {
-        left->add(key, value);
-        return;
-    }
+    // TODO
 
     // Wenn der einzufügende Schlüssel größer als this->key ist, gehe nach rechts.
     // Anmerkung: Diese Möglichkeit muss an dieser Stelle immer gegeben sein,
     // da die Bedingungen oben schon alle anderen Fälle abdecken.
-    right->add(key, value);
+    // TODO
 }
 
 bool Element::get(int key)
 {
     // Wenn der Knoten leer ist, gibt es keinen Wert.
-    if (empty()) {
-        return false;
-    }
+    // TODO
 
     // Wenn der Schlüssel in this gefunden wurde, wird der Wert zurückgegeben.
-    if (key == this->key) {
-        return value;
-    }
+    // TODO
 
     // Wenn der gesuchte Schlüssel kleiner als this->key ist, gehe nach links.
-    if (key < this->key) {
-        return left->get(key);
-    }
+    // TODO
 
     // Wenn der gesuchte Schlüssel größer als this->key ist, gehe nach rechts.
-    return right->get(key);
+    // TODO
+
+    return false;
 }
 
 int Element::height()
 {
     // Ein leerer Baum hat die Höhe 0.
-    if (empty()) {
-        return 0;
-    }
+    // TODO
 
     // Berechne die Höhe der linken und rechten Teilbäume.
-    int leftHeight = left->height();
-    int rightHeight = right->height();
+    // TODO
 
     // Die Höhe des Baumes ist 1 plus die maximale Höhe der beiden Teilbäume.
     // Das Maximum kann mit `std::max` berechnet werden.
-    return 1 + std::max(leftHeight, rightHeight);
+    // TODO
+
+    return 0;
 }
