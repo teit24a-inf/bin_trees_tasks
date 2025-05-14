@@ -3,14 +3,19 @@
 
 bool Element::empty()
 {
+    // Ein Knoten ist leer, wenn eines oder beide Kinder nullptr sind.
     return left == nullptr || right == nullptr;
 }
 
 void Element::insert(int key, bool value)
 {
+    // this->key und this-> value können bedingungslos gesetzt werden,
     this->key = key;
     this->value = value;
 
+    // Falls eines der Kinder bisher nullptr war, wird es jetzt initialisiert.
+    // Dadurch wird garantiert, dass ein Knoten nicht leer ist,
+    // nachdem er mit einem Schlüssel und Wert initialisiert wurde.
     if (left == nullptr) {
         left = new Element();
     }
